@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game</title>
+    <!--Stylesheets-->
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+    <div id="Mstr-Cntr" class="mstr-cntr">
+        <!--Game-->
+        <div class="game-cntr">
+            <!--Canvas-->
+            <div id="Canvas-Cntr" class="canvas-cntr">
+                <canvas id="canvas1"></canvas>
+            </div>
+            <!--Game header-->
+            <div class="game-header">
+                <p id="Menu-Btn" class="header-text">Menu</p>
+                <p class="header-text">Score: <span id="Score">0</span></p>
+            </div>
+            <!--Press space message-->
+            <div id="Start-Game-Message" class="start-game-message">
+                <p>Press Space To Start</p>
+            </div>
+            <!--Paused message-->
+            <div id="Paused-Game-Message" class="paused-game-message hide-message">
+                <p>PAUSED</p>
+            </div>
+            <!--Menu button modal-->
+            <div id="Back-To-Menu-Modal" class="modal hide-modal">
+                <div class="modal-content">
+                    <h4>Go back to menu</h4>
+                    <p>Are you sure?</p>
+                    <div class="btn-cntr">
+                        <div id="Yes-Btn" class="btn">
+                            <h5>Yes</h5>
+                        </div>
+                        <div id="No-Btn" class="btn">
+                            <h5>No</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Game over modal-->
+            <div id="Game-Over-Modal" class="modal hide-modal">
+                <div class="modal-content">
+                    <h4>Game Over</h4>
+                    <p>You Scored: <span id="Final-Score">0</span></p>
+                    <div id="Player-Again-Btn" class="btn">
+                        <h5>Play Again</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Menu-->
+        <div id="Menu-Cntr" class="menu-cntr">
+            <!--Game title-->
+            <div class="menu-title">
+                <h1>Snake</h1>
+            </div>
+            <!--Play button-->
+            <div id="Play-Btn" class="btn">
+                <h5>Play</h5>
+            </div>
+            <!--Controls Menu Button-->
+            <div id="Show-Controls-Menu" class="show-controls-menu">
+                <img src="./assets/controller.svg" alt="Show-Controls">
+            </div>
+        </div>
+        <!--Game Controls Menu-->
+        <div id="Controls-Cntr" class="controls-cntr hide-controls">
+            <!--Controls list-->
+            <div class="controls-list">
+                <div class="controls-list-left">
+                    <p>&#8593;</p>
+                    <p>&#8595;</p>
+                    <p>&#8592;</p>
+                    <p>&#8594;</p>
+                    <p>Space</p>
+                </div>
+                <div class="controls-list-right">
+                    <p>- Move Up</p>
+                    <p>- Move Down</p>
+                    <p>- Move Left</p>
+                    <p>- Move Right</p>
+                    <p>- Pause/Resume Game</p>
+                </div>
+            </div>
+            <!--Exit Button-->
+            <div id="Exit-Btn" class="exit-btn">
+                <img src="./assets/x-lg.svg" alt="Exit-Controls-List">
+            </div>
+        </div>
+    </div>
+
+    <!--Scripts-->
+    <script type="module" src="./js/main.js"></script>
+</body>
+</html>

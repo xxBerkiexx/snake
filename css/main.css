@@ -1,0 +1,394 @@
+@import url("https://fonts.googleapis.com/css?family=Prosto+One:400");
+/*Quick CSS reset*/
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html, body {
+  /*Fill Window*/
+  width: 100%;
+  height: 100%;
+  color: white;
+  -webkit-transition: font-size .2s;
+  transition: font-size .2s;
+}
+
+img {
+  width: 100%;
+  -webkit-filter: invert(100%) sepia(11%) saturate(1877%) hue-rotate(210deg) brightness(117%) contrast(109%);
+          filter: invert(100%) sepia(11%) saturate(1877%) hue-rotate(210deg) brightness(117%) contrast(109%);
+  display: block;
+}
+
+body {
+  font-family: 'Prosto One', sans-serif;
+  font-weight: 400;
+  line-height: 1.75;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Prosto One', sans-serif;
+  margin: 3rem 0 1.38rem;
+  line-height: 1.3;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 3.052rem;
+  margin-top: 0;
+}
+
+h2 {
+  font-size: 2.441rem;
+}
+
+h3 {
+  font-size: 1.953rem;
+}
+
+h4 {
+  font-size: 1.563rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+small, .text_small {
+  font-size: 0.8rem;
+}
+
+@media screen and (max-width: 600px) {
+  html {
+    font-size: 100%;
+  }
+  /*16px*/
+}
+
+@media screen and (max-width: 480px) {
+  html {
+    font-size: 87.5%;
+  }
+  /*14px*/
+}
+
+@media screen and (max-width: 360px) {
+  html {
+    font-size: 75%;
+  }
+  /*12px*/
+}
+
+@media screen and (min-width: 600px) {
+  html {
+    font-size: 112.5%;
+  }
+  /*18px*/
+}
+
+html, body {
+  background-color: #323232;
+}
+
+.mstr-cntr {
+  aspect-ratio: 3 / 2;
+  max-height: 600px;
+  max-width: 960px;
+  background-color: #0a0a0a;
+  position: relative;
+}
+
+.btn {
+  margin-top: 25px;
+  border: 2px solid white;
+  -webkit-transition: .2s;
+  transition: .2s;
+  cursor: pointer;
+}
+
+.btn h5 {
+  margin: 0;
+  padding: 5px 25px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.btn:hover {
+  border-radius: 30px;
+}
+
+.game-cntr {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.canvas-cntr {
+  width: 100%;
+  height: 90%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+#canvas1 {
+  width: 100%;
+  height: 100%;
+}
+
+.start-game-message, .paused-game-message {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.start-game-message p, .paused-game-message p {
+  text-shadow: 3px 5px 1px black;
+  cursor: default;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.hide-message {
+  display: none;
+}
+
+.game-header {
+  width: 100%;
+  height: 10%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-bottom: 2px solid white;
+}
+
+.game-header .header-text {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 15px;
+  cursor: default;
+}
+
+.game-header #Menu-Btn, .game-header #Pause-Btn {
+  cursor: pointer;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.game-header #Menu-Btn:hover, .game-header #Pause-Btn:hover {
+  font-weight: bold;
+}
+
+.game-header #Score {
+  margin-left: 10px;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border: 2px solid white;
+  background-color: rgba(0, 0, 0, 0.75);
+  -webkit-transition: .2s;
+  transition: .2s;
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal .modal-content {
+  width: 100%;
+  padding: 6px 22px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.modal .modal-content h4 {
+  margin: 0;
+}
+
+.modal .modal-content .btn {
+  margin: 0 5px;
+  width: auto;
+  display: inline-block;
+}
+
+.hide-modal {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.hide-modal-content {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.menu-cntr {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #0a0a0a;
+  visibility: visible;
+  opacity: 1;
+  -webkit-transition: .2s;
+  transition: .2s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.menu-cntr .menu-title h1 {
+  margin: 0;
+  font-size: 4.768rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.menu-cntr .show-touch-controls-cntr .show-touch-controls-input, .menu-cntr .show-touch-controls-cntr .show-touch-controls-label {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.menu-cntr .show-touch-controls-cntr .show-touch-controls-input {
+  margin-right: 10px;
+}
+
+.menu-cntr .show-touch-controls-cntr .show-touch-controls-label {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.menu-cntr .show-controls-menu {
+  margin: 10px 14px;
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  cursor: pointer;
+}
+
+.hide-menu {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.controls-cntr {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #0a0a0a;
+  visibility: visible;
+  opacity: 1;
+  -webkit-transition: .2s;
+  transition: .2s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.controls-cntr .controls-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.controls-cntr .controls-list-left {
+  text-align: right;
+}
+
+.controls-cntr .controls-list-right {
+  margin-left: 10px;
+  text-align: left;
+}
+
+.controls-cntr .exit-btn {
+  margin: 10px 14px;
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.hide-controls {
+  visibility: hidden;
+  opacity: 0;
+}
+
+@media screen and (max-width: 600px) {
+  .controls-cntr .exit-btn {
+    width: 20px;
+    height: 20px;
+  }
+}
+/*# sourceMappingURL=main.css.map */

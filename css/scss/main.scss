@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css?family=Prosto+One:400'); //The font
+@import "./variables.scss";                         //Variables
+@import "./css-reset.scss";                         //CSS Reset
+
+html, body {
+    background-color: rgb(50, 50, 50);
+}
+
+.mstr-cntr {
+    aspect-ratio: 3 / 2;                            //Set aspect ratio
+    max-height: 600px;                              //Max height
+    max-width: 960px;                               //Max width
+    background-color: $color1;                      //Default background color
+    position: relative;                             //Make a parent
+}
+
+.btn {
+    margin-top: 25px;                               //Push Down
+    border: 2px solid white;                      //Add a border
+    transition: .2s;                                //Animate responsiveness
+    cursor: pointer;                                //Show it can be clicked
+    & h5 {
+        margin: 0;                                      //Get rid of margin
+        padding: 5px 25px;                              //Pad text
+        user-select: none;                              //Prevent highlighting
+    }
+    &:hover {
+        border-radius: 30px;                            //Round corners on hover
+    }
+}
+
+//------------------------------------------------ GAME ------------------------------------------------
+.game-cntr {
+    width: 100%;                                    //Full width of container
+    height: 100%;                                   //Full height of container
+    position: absolute;                             //Absolute positioning
+    top: 0; left: 0;                                //Top left
+}
+
+.canvas-cntr {
+    width: 100%;                                    //Full Width of parent container
+    height: 90%;                                    //90% the height of parent container
+    position: absolute;                             //Absolute positioning
+    bottom: 0; left: 0;                             //Bottom Left
+}
+
+#canvas1 {
+    width: 100%;                                    //Full width of parent container
+    height: 100%;                                   //FUll height of parent container
+}
+
+.start-game-message, .paused-game-message {
+    position: absolute;                             //Absolute positioning
+    top: 45%; left: 50%;                            //Relative Center
+    transform: translate(-50%, -50%);
+    & p {
+        text-shadow: 3px 5px 1px black;               //Add a text shadow
+        cursor: default;                                //Get rid of text cursor
+        user-select: none;                              //Prevent highlighting
+    }
+}
+
+.hide-message {
+    display: none;
+}
+
+.game-header {
+    width: 100%;                                    //Full width of parent container
+    height: 10%;                                    //10% the height of parent container
+    display: flex;                                  //Display contents as flex
+    justify-content: space-between;                 //Add space between them
+    border-bottom: 2px solid white;               //Add a bottom border
+    & .header-text {
+        height: 100%;                                   //Full height of parent container
+        display: flex;                                  //Display text as flex
+        align-items: center;                            //Vertically center text
+        margin: 0 15px;                                 //Add left & right margins
+        cursor: default;                                //Get rid of text cursor
+    }
+    & #Menu-Btn, & #Pause-Btn {
+        cursor: pointer;                                    //Show it can be clicked
+        transition: .2s;                                    //Animate responsiveness
+        &:hover {
+            font-weight: bold;                                  //Bold text on hover
+        }
+    }
+    & #Score {
+        margin-left: 10px;                                  //Add space
+    }
+}
+
+.modal {
+    position: absolute;                             //Absolute positioning
+    top: 50%; left: 50%;                            //Top Left 50%
+    transform: translate(-50%, -50%);               //Centered
+    border: 2px solid white;                      //Add a border
+    background-color: rgba(0, 0, 0, 0.75);        //Add slightly transparent background
+    transition: .2s;                                //Animate responsiveness
+    visibility: visible;                            //Visible
+    opacity: 1;                                     //Opaque
+    & .modal-content {
+        width: 100%;
+        padding: 6px 22px;                              //Add padding
+        display: flex;                                  //Display items as flex
+        flex-flow: column;                              //Flow down
+        justify-content: center;                        //Center contents
+        align-items: center;                            //Center contents
+        transition: .2s;                                //Animate responsiveness
+        & h4 {
+            margin: 0;                                      //Remove unwanted margins
+        }
+        & .btn {
+            margin: 0 5px;                                  //Remove top margin and add side margins
+            width: auto;                                    //Automatic width
+            display: inline-block;                          //Side by side
+        }
+    }
+}
+
+.hide-modal {
+    visibility: hidden;                             //Invisible
+    opacity: 0;                                     //Fully transparent
+}
+
+.hide-modal-content {
+    visibility: hidden;                             //Invisible
+    opacity: 0;                                     //Fully transparent
+}
+
+
+//------------------------------------------------ MENU ------------------------------------------------
+.menu-cntr {
+    width: 100%;                                    //Full width of parent container
+    height: 100%;                                   //FUll height of parent container
+    text-align: center;                             //Center contents
+    position: absolute;                             //Absolute Positioning
+    top: 0; left: 0;                                //Top left
+    background-color: $color1;                      //Background color
+    visibility: visible;                            //Visible
+    opacity: 1;                                     //Fully opaque
+    transition: .2s;                                //Animate responsiveness
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    & .menu-title {
+        & h1 {
+            margin: 0;                                      //Get rid of margin
+            font-size: 4.768rem;                            //Increase font size
+            user-select: none;                              //Prevent highlighting
+        }
+    }
+    & .show-touch-controls-cntr {
+        & .show-touch-controls-input, & .show-touch-controls-label {
+            display: inline-block;                          //Side by side
+            cursor: pointer;                                //Show it can be clicked
+        }
+        & .show-touch-controls-input {
+            margin-right: 10px;                             //Push to the left
+        }
+        & .show-touch-controls-label {
+            user-select: none;                              //Prevent highlighting
+        }
+    }
+    & .show-controls-menu {
+        margin: 10px 14px;                              //Add a margin
+        width: 35px;                                    //Width
+        height: 35px;                                   //Height
+        position: absolute;                             //Absolute Positioning
+        bottom: 0; right: 0;                            //Bottom Right
+        cursor: pointer;                                //Show it can be clicked
+    }
+}
+
+.hide-menu {
+    visibility: hidden;                             //Invisible
+    opacity: 0;                                     //Fully transparent
+}
+
+
+
+//------------------------------------------------ CONTROLS ------------------------------------------------
+.controls-cntr {
+    width: 100%;                                    //Full width of parent container
+    height: 100%;                                   //FUll height of parent container
+    text-align: center;                             //Center contents
+    position: absolute;                             //Absolute Positioning
+    top: 0; left: 0;                                //Top left
+    background-color: $color1;                      //Background color
+    visibility: visible;                            //Visible
+    opacity: 1;                                     //Fully opaque
+    transition: .2s;                                //Animate responsiveness
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & .controls-list {
+        display: flex;
+        justify-content: center;
+        &-left {
+            text-align: right;
+        }
+        &-right {
+            margin-left: 10px;
+            text-align: left;
+        }
+    }
+    & .exit-btn {
+        margin: 10px 14px;                              //Add a margin
+        width: 25px;                                    //Width
+        height: 25px;                                   //Height
+        position: absolute;                             //Absolute Positioning
+        top: 0; left: 0;                                //Top Left
+        cursor: pointer;                                //Show it can be clicked
+        transition: .2s;                                //Animate responsiveness
+    }
+}
+
+.hide-controls {
+    visibility: hidden;                             //Invisible
+    opacity: 0;                                     //Fully transparent
+}
+
+@media screen and (max-width: 600px) {
+    .controls-cntr {
+        & .exit-btn {
+            width: 20px;                                    //Width
+            height: 20px;                                   //Height
+        }
+    }
+}
